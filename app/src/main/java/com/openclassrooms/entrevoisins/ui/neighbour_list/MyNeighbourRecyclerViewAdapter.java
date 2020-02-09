@@ -41,6 +41,11 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     }
 
     public static final String EXTRA_AVATAR = "Avatar";
+    public static final String EXTRA_NAME = "Name";
+    public static final String EXTRA_DESCR = "Descr";
+    public static final String EXTRA_ADRESS = "Adress";
+    public static final String EXTRA_NUMBER = "Number";
+    public static final String EXTRA_WEBSITE = "Website";
 
 
     @Override
@@ -57,6 +62,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         public TextView mNeighbourName;
         @BindView(R.id.item_list_delete_button)
         public ImageButton mDeleteButton;
+
 
         public ViewHolder(View view) {
             super(view);
@@ -85,6 +91,11 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 Log.v(TAG, "name= "+neighbour.getName());
                 Intent intent = new Intent(view.getContext(), DisplayMessageActivity.class);
                 intent.putExtra (EXTRA_AVATAR, neighbour.getAvatarUrl ());
+                intent.putExtra (EXTRA_NAME, neighbour.getName ());
+                intent.putExtra (EXTRA_DESCR, neighbour.getDescription ());
+                intent.putExtra (EXTRA_ADRESS, neighbour.getAdress ());
+                intent.putExtra (EXTRA_NUMBER, neighbour.getNumber ());
+                intent.putExtra (EXTRA_WEBSITE, neighbour.getWebsite ());
                 view.getContext().startActivity(intent);}
 
             });
@@ -94,3 +105,4 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     }
 
 }
+

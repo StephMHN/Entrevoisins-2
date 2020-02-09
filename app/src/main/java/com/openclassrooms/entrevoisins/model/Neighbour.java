@@ -70,6 +70,25 @@ public class Neighbour {
         this.avatarUrl = avatarUrl;
     }
 
+    public String getAdress() { return adress; }
+
+    public void setAdress(String adress) { this.adress = adress; }
+
+    public String getNumber() { return number; }
+
+    public void setNumber(String number) { this.number = number; }
+
+    public String getWebsite() { return website; }
+
+    public void setWebsite(String website) { this.website = website; }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
+
+    public boolean isFavorite() { return favorite; }
+
+    public void setFavorite(boolean favorite) { this.favorite = favorite; }
 
     @Override
     public boolean equals(Object o) {
