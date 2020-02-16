@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.neighbour_list.DisplayMessageActivity">
 
+
     <ImageView
         android:id="@+id/item_list_avatar"
         android:layout_width="match_parent"
@@ -18,58 +19,25 @@
         android:layout_width="380dp"
         android:layout_height="200dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="220dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_list_avatar">
 
         <TextView
             android:id="@+id/item_list_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="19dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="23dp"
             android:textColor="#2B2929"
             android:textSize="27sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/cardView2"
+            app:layout_constraintStart_toStartOf="@id/cardView2"
+            app:layout_constraintTop_toTopOf="@id/cardView2" />
 
-        <ImageView
-            android:id="@+id/icon1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/icon2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-             />
-
-        <ImageView
-            android:id="@+id/icon3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="165dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
 
         <TextView
             android:id="@+id/item_adress"
@@ -81,9 +49,9 @@
             android:layout_marginBottom="0dp"
             android:textSize="17dp"
             android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@id/imageView3"
+            app:layout_constraintStart_toStartOf="@id/imageView3"
+            app:layout_constraintTop_toTopOf="@id/imageView3" />
 
         <TextView
             android:id="@+id/item_facebook"
@@ -95,9 +63,9 @@
             android:layout_marginBottom="0dp"
             android:textSize="17dp"
             android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@id/imageView4"
+            app:layout_constraintStart_toStartOf="@id/imageView4"
+            app:layout_constraintTop_toTopOf="@id/imageView4" />
 
         <TextView
             android:id="@+id/item_number"
@@ -109,9 +77,56 @@
             android:layout_marginBottom="0dp"
             android:textSize="17dp"
             android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="@id/imageView" />
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_call_name"
+                tools:layout_editor_absoluteX="3dp"
+                tools:layout_editor_absoluteY="115dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintStart_toStartOf="@id/cardView2"
+                app:layout_constraintTop_toTopOf="@id/cardView2"
+                app:layout_constraintBottom_toBottomOf="@id/imageView3"/>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_location"
+                tools:layout_editor_absoluteX="3dp"
+                tools:layout_editor_absoluteY="74dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintStart_toStartOf="@id/cardView2"
+                app:layout_constraintTop_toTopOf="@id/cardView2"
+                app:layout_constraintBottom_toBottomOf="@id/item_list_name"/>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/cardView2"
+            app:layout_constraintTop_toTopOf="@id/cardView2"
+            app:srcCompat="@drawable/ic_internet"
+            tools:layout_editor_absoluteX="3p"
+            tools:layout_editor_absoluteY="160dp" />
+
 
     </android.support.v7.widget.CardView>
 
@@ -133,19 +148,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="60dp" />
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toBottomOf="@id/textView2"/>
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:layout_marginBottom="45dp"
+            android:layout_marginBottom="75dp"
+            android:layout_marginTop="15dp"
             android:text="A propos de moi"
             android:textColor="#2B2929"
             android:textColorHint="#000000"
             android:textSize="30dp"
-            android:textStyle="normal"/>
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/cardView"
+            app:layout_constraintStart_toStartOf="@id/cardView"
+            app:layout_constraintTop_toTopOf="@id/cardView" />
 
     </android.support.v7.widget.CardView>
 
@@ -153,25 +173,45 @@
         android:id="@+id/item_list_name2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="350dp"
-        android:layout_marginBottom="452dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="240dp"
         android:textColor="#FFFFFF"
         android:textSize="39dp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.86"
-        app:layout_constraintStart_toEndOf="@+id/item_list_avatar" />
+        app:layout_constraintBottom_toBottomOf="@+id/item_list_avatar"
+        app:layout_constraintEnd_toEndOf="@+id/item_list_avatar"
+        app:layout_constraintStart_toStartOf="@+id/item_list_avatar"
+        app:layout_constraintTop_toTopOf="@+id/item_list_avatar" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="35dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="18dp"
-        app:layout_constraintStart_toEndOf="@+id/cardView2"
+    <ImageButton
+        android:id="@+id/Backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/item_list_avatar"
+        app:layout_constraintEnd_toEndOf="@+id/item_list_avatar"
+        app:layout_constraintStart_toStartOf="@+id/item_list_avatar"
+        app:layout_constraintTop_toTopOf="@+id/item_list_avatar"
+        android:background=
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="330dp"
+        android:layout_marginBottom="200dp"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:layout_marginStart="450dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:tint="@color/yellow"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_list_avatar"
-        app:srcCompat="@android:drawable/star_big_off" />
+        app:srcCompat="@drawable/ic_star_white_24dp" />
 
 </android.support.constraint.ConstraintLayout>

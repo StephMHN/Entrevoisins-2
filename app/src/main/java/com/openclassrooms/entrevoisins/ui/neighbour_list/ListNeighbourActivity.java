@@ -7,8 +7,10 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TableLayout;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
@@ -20,7 +22,7 @@ import org.greenrobot.eventbus.EventBus;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ListNeighbourActivity extends AppCompatActivity {
+public class ListNeighbourActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener  {
 
     public NeighbourApiService mApiService;
 
@@ -35,7 +37,7 @@ public class ListNeighbourActivity extends AppCompatActivity {
     FloatingActionButton mFloatingActionButton;
 
 
-
+    private static final String TAG = "MyActivity";
     ListNeighbourPagerAdapter mPagerAdapter;
 
     @Override
@@ -54,6 +56,20 @@ public class ListNeighbourActivity extends AppCompatActivity {
 
         };
 
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        Log.v(TAG,"name=gp");
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+        Log.v(TAG,"name=vp");
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+        Log.v(TAG,"name=dp");
+    }
 
 
 }

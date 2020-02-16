@@ -21,7 +21,7 @@ import butterknife.BindView;
 
 public class DisplayMessageActivity extends AppCompatActivity  {
 
-
+private Neighbour neighbour;
     // UI Components
 
     @BindView(R.id.item_list_avatar)
@@ -40,8 +40,12 @@ public class DisplayMessageActivity extends AppCompatActivity  {
     public TextView mFacebookText;
     @BindView (R.id.item_number)
     public TextView mNumberText;
-    @BindView (R.id.icon1)
-    public ImageView mCallIcon;
+    @BindView (R.id.imageView)
+    public ImageView mIcon1;
+    @BindView (R.id.imageView3)
+    public ImageView mIcon2;
+    @BindView (R.id.imageView4)
+    public ImageView mIcon3;
 
 
     @Override
@@ -49,31 +53,20 @@ public class DisplayMessageActivity extends AppCompatActivity  {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_display_message);
         Intent intent =getIntent();
-        String avatar = intent.getStringExtra(MyNeighbourRecyclerViewAdapter.EXTRA_AVATAR);
-        String name = intent.getStringExtra(MyNeighbourRecyclerViewAdapter.EXTRA_NAME);
-        String descr = intent.getStringExtra(MyNeighbourRecyclerViewAdapter.EXTRA_DESCR);
-        String adress = intent.getStringExtra(MyNeighbourRecyclerViewAdapter.EXTRA_ADRESS);
-        String website = intent.getStringExtra (MyNeighbourRecyclerViewAdapter.EXTRA_WEBSITE);
-        String number = intent.getStringExtra (MyNeighbourRecyclerViewAdapter.EXTRA_NUMBER);
+        if (intent.getExtras() !=null) {
+                neighbour = (Neighbour)intent.getExtras().get("toto");
+        }
         ImageView imageView  = findViewById (R.id.item_list_avatar);
-        ImageView imageView2 = findViewById (R.id.icon1);
-        TextView textView = findViewById (R.id.item_list_name2);
-        TextView textView2 = findViewById (R.id.item_list_name);
-        TextView textView3 = findViewById (R.id.item_Description);
-        TextView textView4 = findViewById (R.id.item_adress);
-        TextView textView5 = findViewById (R.id.item_facebook);
-        TextView textView6 = findViewById (R.id.item_number);
-        textView.setText(name);
-        textView2.setText(name);
-        textView3.setText(descr);
-        textView4.setText(adress);
-        textView5.setText(website);
-        textView6.setText(number);
+        TextView textView = findViewById (R.id.item_list_name2); textView.setText(neighbour.getName());
+        TextView textView2 = findViewById (R.id.item_list_name); textView2.setText(neighbour.getName());
+        TextView textView3 = findViewById (R.id.item_Description); textView3.setText(neighbour.getDescription());
+        TextView textView4 = findViewById (R.id.item_adress); textView4.setText(neighbour.getAdress());
+        TextView textView5 = findViewById (R.id.item_facebook); textView5.setText(neighbour.getWebsite());
+        TextView textView6 = findViewById (R.id.item_number); textView6.setText(neighbour.getNumber());
         Glide.with(this)
-                .load(avatar)
+                .load(neighbour.getAvatarUrl())
                 .centerCrop()
                 .into(imageView);
-
     }
 
 }

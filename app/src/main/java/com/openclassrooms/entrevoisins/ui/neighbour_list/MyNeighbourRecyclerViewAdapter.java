@@ -19,6 +19,7 @@ import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.io.Serializable;
 import java.util.List;
 
 import butterknife.BindView;
@@ -40,12 +41,8 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         return new ViewHolder(view);
     }
 
-    public static final String EXTRA_AVATAR = "Avatar";
-    public static final String EXTRA_NAME = "Name";
-    public static final String EXTRA_DESCR = "Descr";
-    public static final String EXTRA_ADRESS = "Adress";
-    public static final String EXTRA_NUMBER = "Number";
-    public static final String EXTRA_WEBSITE = "Website";
+
+    public static final String EXTRA_VOS = "toto";
 
 
     @Override
@@ -90,12 +87,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             public void onClick(View view) {
                 Log.v(TAG, "name= "+neighbour.getName());
                 Intent intent = new Intent(view.getContext(), DisplayMessageActivity.class);
-                intent.putExtra (EXTRA_AVATAR, neighbour.getAvatarUrl ());
-                intent.putExtra (EXTRA_NAME, neighbour.getName ());
-                intent.putExtra (EXTRA_DESCR, neighbour.getDescription ());
-                intent.putExtra (EXTRA_ADRESS, neighbour.getAdress ());
-                intent.putExtra (EXTRA_NUMBER, neighbour.getNumber ());
-                intent.putExtra (EXTRA_WEBSITE, neighbour.getWebsite ());
+                intent.putExtra(EXTRA_VOS, neighbour);
                 view.getContext().startActivity(intent);}
 
             });
